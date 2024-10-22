@@ -3,10 +3,12 @@ import $ from 'jquery';
 window.jQuery = $;
 window.$ = $;
 import getHeaderHeight from './functions/header-height';
+
 import langDropDown from './components/langdropdown';
 import submenuMenu from './components/submenuMenu';
+import heroSwiper from './components/heroSwiper';
 import modalContact from './components/modalContact';
-import Swiper from '/node_modules/swiper/swiper-bundle.min.mjs';
+import searchMain from './components/searchMain';
 
 window.addEventListener('DOMContentLoaded', () => {
     'use strict';
@@ -14,26 +16,8 @@ window.addEventListener('DOMContentLoaded', () => {
     getHeaderHeight();
     langDropDown();
     submenuMenu();
+    heroSwiper();
     modalContact();
-
-
-    const swiper = new Swiper('.heroSwiper', {
-        slidesPerView: 1,
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-        // loop: true,
-    });
+    searchMain();
     
-    
-
-    
-
-
-    // console.log($('body'));
 });

@@ -5,9 +5,10 @@
     display: block;
     text-transform: uppercase;
     z-index: 15;
-    @media (max-width: 767.98px) {
-      margin-right: 62px;
-    }
+    margin-left: 5px;
+    // @media (max-width: 767.98px) {
+    //   margin-right: 62px;
+    // }
   
     .selected {
       display: flex;
@@ -19,12 +20,12 @@
       > span {
         color: #fff;
         font-weight: 400;
-        font-size: 16px;
+        font-size: 18px;
         line-height: 1.2;
         > a {
           color: #fff;
           font-weight: 400;
-          font-size: 16px;
+          font-size: 18px;
           line-height: 1.2;
         }
       }
@@ -73,7 +74,7 @@
         a {
           color: #000 !important;
           font-weight: 500;
-          font-size: 16px;
+          font-size: 18px;
           line-height: 1.2;
           margin-bottom: 10px;
           display: block;

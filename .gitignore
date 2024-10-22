@@ -1,0 +1,56 @@
+# Laravel specific
+/.phpunit.cache
+/node_modules
+/public/build
+/public/hot
+/public/storage
+/storage/*.key
+/vendor
+.env
+.env.backup
+.env.production
+.phpactor.json
+.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+auth.json
+composer.phar
+/dist
+/.parcel-cache
+package-lock.json
+
+# Laravel storage optimizations
+/storage/logs/*
+/storage/framework/cache/*
+/storage/framework/sessions/*
+/storage/framework/views/*
+/storage/debugbar/*
+
+# IDE specific
+/.idea/
+/.vscode/
+/.fleet/
+/.sublime-project
+/sublime-workspace
+
+# macOS specific
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows specific
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Docker specific
+docker-compose.override.yml
+.dockerignore
+
+# NPM and Yarn specific
+npm-debug.log
+yarn-error.log
+
+# Other temp files
+/.zed

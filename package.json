@@ -1,0 +1,31 @@
+{
+    "name": "parcel-rider",
+    "version": "1.0.0",
+    "browserslist": "> 0.5%, last 2 versions, not dead",
+    "scripts": {
+      "dev": "parcel src/index.html",
+      "build": "parcel build src/index.html --no-cache --no-optimize --dist-dir ./dist && node moveFiles.js",
+      "clean": "rm -rf dist .parcel-cache || rmdir /S /Q dist .parcel-cache",
+      "pm2:start": "pm2 start ecosystem.config.js",
+      "pm2:stop": "pm2 stop parcel-dev",
+      "pm2:restart": "pm2 restart parcel-dev",
+      "pm2:logs": "pm2 logs parcel-dev"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "description": "",
+    "devDependencies": {
+      "@parcel/transformer-sass": "^2.12.0",
+      "lodash": "^4.17.21",
+      "parcel": "^2.12.0",
+      "posthtml": "^0.16.6",
+      "posthtml-include": "^2.0.1",
+      "sharp": "^0.31.3",
+      "pm2": "^5.2.0"
+    },
+    "dependencies": {
+      "swiper": "^11.1.14"
+    }
+  }
+  

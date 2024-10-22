@@ -1,0 +1,26 @@
+@use 'vendor/normalize';
+@use "./node_modules/swiper/swiper-bundle.min.css";
+
+@use 'vars';
+@use "fonts";
+@use "settings";
+
+@use "components/header";
+@use "components/hero";
+@use "components/footer";
+
+.poster {
+    background-image: url("../assets/images/poster.jpg");
+    background-size: cover;
+    background-position: center;
+    min-height: 500px;
+
+    &__content {
+        &-title {
+            font-size: 98px;
+            color: #181e31;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+    }
+}

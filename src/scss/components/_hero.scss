@@ -1,7 +1,14 @@
-
 .hero {
     background-color: #dddbdb;
     padding: 50px 0;
+
+    &__slider {
+        transition: all 0.3s ease;
+
+        &--hide {
+            opacity: 0;
+        }
+    }
 }
 
 .heroSwiper {
@@ -34,12 +41,15 @@
             >span {
                 background-color: var(--red);
                 padding: 12px 30px;
-                font-size: 20px;
-                font-weight: 700;
                 text-transform: uppercase;
                 color: #fff;
                 display: inline-flex;
                 border-radius: 8px;
+                > a {
+                    font-weight: 700;
+                    font-size: 20px;
+                    color: #fff !important;
+                }
             }
         }
     }
@@ -84,7 +94,7 @@
         width: 100%;
         height: calc(100% - 30px);
         // z-index: 9;
-    } 
+    }
 
     .swiper-pagination {
         // position: unset;

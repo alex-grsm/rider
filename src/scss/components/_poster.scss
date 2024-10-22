@@ -1,0 +1,25 @@
+.poster {
+    background-image: url("../assets/images/poster.jpg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #dddbdb;
+    
+
+    &__content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 500px;
+        margin-left: 22%;
+        width: 100%;
+
+        &-title {
+            margin-top: 20px;
+            font-size: 98px;
+            color: #181e31;
+            font-weight: 700;
+            line-height: 1;
+        }
+    }
+}

@@ -1,5 +1,52 @@
 .footer {
-    background-color: #333;
+    background-color: #000;
     color: #fff;
-    text-align: center;
+    padding: 30px 0;
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__box {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+    }
+
+    &__logos {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+    }
+
+    &__copy {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+
+.social {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    &__item {}
+
+    &__link {
+        height: 45px;
+        width: 100%;
+        display: block;
+
+        svg {
+            width: 100%;
+            max-height: 45px;
+
+            path {
+                fill: #fff;
+            }
+        }
+    }
 }

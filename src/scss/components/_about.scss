@@ -1,0 +1,140 @@
+.about {
+    padding: 50px 0;
+
+    &__inner {
+        text-align: center;
+
+        .h2 {}
+
+        p {
+            font-size: 22px;
+            font-size: 22px;
+
+            &:first-of-type {
+                font-size: 29px;
+            }
+        }
+    }
+}
+
+.sales-points {
+    padding-bottom: 100px;
+
+    &__inner {
+        display: flex;
+        gap: 50px;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        &--open {
+            .sales-points__content {
+                max-width: 100%;
+            }
+        }
+    }
+
+    &__logo {
+        width: 211px;
+    }
+
+    &__box {
+        flex: 1;
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 20px;
+        color: #000;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 30px;
+        border-top: 2px solid var(--red);
+        border-bottom: 2px solid var(--red);
+        cursor: pointer;
+
+        .points-icon {
+            width: 20px;
+            height: 20px;
+            transform: rotate(180deg);
+            path {
+                fill: var(--red);
+            }
+        }
+    }
+
+    &__content {
+        display: none;
+        position: absolute;
+        width: 100%;
+        right: 0;
+        bottom: 80px;
+        background-color: #fff;
+        border: 2px solid var(--red);
+        border-radius: 13px;
+        padding: 20px;
+        gap: 30px;
+        max-width: 979px;
+
+        &--active {
+            display: flex;
+        }
+
+        &-result {
+            width: 240px;
+            display: none;
+
+            &--show {
+                display: flex;
+            }
+
+            .result-item-wrap {
+                display: none;
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+                display: none;
+
+                &--active {
+                    display: flex;
+                }
+            }
+
+            .result-item {
+                font-weight: 300;
+                font-size: 20px;
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+
+                .r-title {
+                    font-weight: 500;
+                }
+
+                .r-address {
+                    // font-weight: 400;
+                }
+            }
+        }
+
+        &-links {
+            flex: 1;
+            flex-direction: column;
+            display: flex;
+            gap: 8px;
+
+            .l-item {
+                font-weight: 300;
+                font-size: 22px;
+                color: #000;
+                cursor: pointer;
+                transition: all 0.3s ease;
+
+                &--active,
+                &:hover {
+                    color: var(--red);
+                }
+            }
+        }
+    }
+}

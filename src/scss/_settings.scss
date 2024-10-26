@@ -106,3 +106,15 @@ a {
 .page--ios .dis-scroll {
   position: relative;
 }
+
+.m0 {
+    margin: 0;
+}
+b, strong {
+    font-weight: 700;
+}
+h2, .h2 {
+    font-size: 38px;
+    color: var(--red);
+    text-transform: uppercase;
+}

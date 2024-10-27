@@ -1,31 +1,31 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .page {
-  height: 100%;
-  font-family: var(--font-family, sans-serif);
-  -webkit-text-size-adjust: 100%;
-  scroll-behavior: smooth;
+    height: 100%;
+    font-family: var(--font-family, sans-serif);
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
 }
 
 .page__body {
-  margin: 0;
-  min-width: 360px;
-  min-height: 100%;
-  font-size: 16px;
+    margin: 0;
+    min-width: 360px;
+    min-height: 100%;
+    font-size: 16px;
 }
 
 img {
-  height: auto;
-  max-width: 100%;
-  object-fit: cover;
+    height: auto;
+    max-width: 100%;
+    object-fit: cover;
 }
 
 a {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 @mixin footerToBottom {
@@ -36,85 +36,176 @@ a {
 }
 
 .site-container {
-  overflow: hidden; // если используете на сайте position: sticky - уберите эту настройку
-//   @include footerToBottom;
+    overflow: hidden; // если используете на сайте position: sticky - уберите эту настройку
+    // @include footerToBottom;
 }
 
 .is-hidden {
-  display: none !important; /* stylelint-disable-line declaration-no-important */
+    display: none !important;
+    /* stylelint-disable-line declaration-no-important */
 }
 
 .btn-reset {
-  border: none;
-  padding: 0;
-  background-color: transparent;
-  cursor: pointer;
+    border: none;
+    padding: 0;
+    background-color: transparent;
+    cursor: pointer;
 }
 
 .list-reset {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .input-reset {
-  -webkit-appearance: none;
-  appearance: none;
-  border: none;
-  border-radius: 0;
-  background-color: #fff;
+    -webkit-appearance: none;
+    appearance: none;
+    border: none;
+    border-radius: 0;
+    background-color: #fff;
 
-  &::-webkit-search-decoration,
-  &::-webkit-search-cancel-button,
-  &::-webkit-search-results-button,
-  &::-webkit-search-results-decoration {
-    display: none;
-  }
+    &::-webkit-search-decoration,
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-results-button,
+    &::-webkit-search-results-decoration {
+        display: none;
+    }
 }
 
 .visually-hidden {
-  position: absolute;
-  overflow: hidden;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  width: 1px;
-  height: 1px;
-  clip: rect(0 0 0 0);
+    position: absolute;
+    overflow: hidden;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    width: 1px;
+    height: 1px;
+    clip: rect(0 0 0 0);
 }
 
 .container {
-  margin: 0 auto;
-  padding: 0 var(--container-offset);
-  max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 var(--container-offset);
+    max-width: var(--container-width);
 }
 
 .centered {
-  text-align: center;
+    text-align: center;
 }
 
 .dis-scroll {
-  position: fixed;
-  left: 0;
-  top: 0;
-  overflow: hidden;
-  width: 100%;
-  height: 100vh;
-  overscroll-behavior: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    overscroll-behavior: none;
 }
 
 .page--ios .dis-scroll {
-  position: relative;
+    position: relative;
 }
 
 .m0 {
     margin: 0;
 }
-b, strong {
+
+b,
+strong {
     font-weight: 700;
 }
-h2, .h2 {
+
+h2,
+.h2 {
     font-size: 38px;
     color: var(--red);
     text-transform: uppercase;
+
+    @media (max-width:767px) {
+        font-size: 32px;
+    }
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    cursor: pointer;
+    z-index: 10;
+
+    &::after {
+        display: none;
+    }
+}
+
+.swiper-button-next {
+    border-width: 20px 0 20px 12px;
+    /* Верхняя, правая, нижняя, левая границы */
+    border-color: transparent transparent transparent var(--red);
+    /* Треугольник вправо */
+    right: 0;
+    /* Позиционирование справа */
+}
+
+.swiper-button-prev {
+    border-width: 20px 12px 20px 0;
+    /* Верхняя, правая, нижняя, левая границы */
+    border-color: transparent var(--red) transparent transparent;
+    /* Треугольник влево */
+    left: 0;
+    /* Позиционирование слева */
+}
+
+@media (min-width: 768px) {
+    .hideDesc {
+        display: none;
+    }
+}
+
+@media (max-width: 1199px) {
+    .searchOn {
+        .header__inner .logo {
+            opacity: 0;
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .searchOn {
+        .header__inner {
+            grid-template-columns: auto;
+
+            .logo,
+            .langSwitcher,
+            .burger {
+                display: none;
+            }
+        }
+
+        .search-box {
+            position: unset;
+            width: 40px;
+            height: 40px;
+        }
+
+        .search-box__inner {
+            position: static;
+
+            .btn-search {
+                height: 40px;
+            }
+        }
+
+        .search-box__input {
+            width: 100%;
+            right: 0;
+            top: 0;
+        }
+    }
 }

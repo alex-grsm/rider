@@ -6,11 +6,14 @@ const searchMain = () => {
     const searchButton = $('#btnSearch');
     const inputField = $('#inputSearch');
     const searchResult = $('#searchResult');
+    const pageBody = $('.page__body');
 
     // Тогглинг активного состояния поля поиска и кнопки
     searchButton.on('click', function () {
         searchBox.toggleClass('search-box__input--active animate__animated animate__fadeIn animate__faster');
         searchButton.toggleClass('btn-search--active');
+        pageBody.toggleClass('searchOn');
+        searchResult.removeClass('search-result--active');
 
         // Если поле активно, ставим фокус
         if (searchBox.hasClass('search-box__input--active')) {
@@ -38,6 +41,7 @@ const searchMain = () => {
             searchBox.removeClass('search-box__input--active animate__animated animate__fadeIn animate__faster');
             searchButton.removeClass('btn-search--active');
             searchResult.removeClass('search-result--active'); // Скрываем результаты при закрытии поиска
+            pageBody.removeClass('searchOn');
         }
     });
 

@@ -7,12 +7,17 @@
 
         &--hide {
             opacity: 0;
+
+            @media (max-width: 767px) {
+                opacity: 1;
+            }
         }
     }
 }
 
 .heroSwiper {
-    max-width: 880px;
+    // max-width: 880px;
+    max-width: calc(var(--index) * 34.92);
     margin: 0 auto;
 
     &__item {
@@ -22,13 +27,21 @@
         display: flex;
         flex-direction: column;
         padding: calc(var(--index) * 2.5) 30px;
+        @media (max-width:767px) {
+            border-width: 2px;
+        }
+
+        @media (max-width:767px) {
+            padding: 40px 15px;
+        }
 
         &-img {
             margin: 0 auto;
 
             img {
-                min-height: 322px;
-                max-height: 322px;
+                // min-height: 322px;
+                // min-height: 322px;
+                height: calc(var(--index) * 12.8);
                 object-fit: cover;
             }
         }
@@ -45,47 +58,35 @@
                 color: #fff;
                 display: inline-flex;
                 border-radius: 8px;
-                > a {
+
+                >a {
                     font-weight: 700;
                     font-size: 20px;
+                    font-size: calc(var(--index) * 0.8);
                     color: #fff !important;
+                    @media (max-width:767px) {
+                       font-size: 16px;
+                    }
                 }
             }
         }
     }
 
-    .swiper-button-next,
-    .swiper-button-prev {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 0;
-        height: 0;
-        border-style: solid;
-        cursor: pointer;
-        z-index: 10;
 
-        &::after {
+    .swiper-button-next {
+        right: 30px;
+
+        @media (max-width:767px) {
             display: none;
         }
     }
 
-    .swiper-button-next {
-        border-width: 20px 0 20px 12px;
-        /* Верхняя, правая, нижняя, левая границы */
-        border-color: transparent transparent transparent var(--red);
-        /* Треугольник вправо */
-        right: 30px;
-        /* Позиционирование справа */
-    }
-
     .swiper-button-prev {
-        border-width: 20px 12px 20px 0;
-        /* Верхняя, правая, нижняя, левая границы */
-        border-color: transparent var(--red) transparent transparent;
-        /* Треугольник влево */
         left: 30px;
-        /* Позиционирование слева */
+
+        @media (max-width:767px) {
+            display: none;
+        }
     }
 
     .swiper-pagination-wrap {
@@ -97,12 +98,12 @@
     }
 
     .swiper-pagination {
-        // position: unset;
-        // left: 80%;
-        // top: calc(var(--index) * 13.7);
-        // display: flex;
         max-height: fit-content;
-        top: 97%;
+        top: 99%;
+
+        @media (max-width: 767px) {
+            top: 101%;
+        }
 
 
         .swiper-pagination-bullet {
@@ -110,6 +111,10 @@
             height: 13px;
             border: 2px solid var(--red);
             background-color: #fff;
+            @media (max-width:767px) {
+                width: 10px;
+                height: 10px;
+            }
 
             &.swiper-pagination-bullet-active {
                 background-color: var(--red);

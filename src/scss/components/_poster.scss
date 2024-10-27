@@ -1,6 +1,6 @@
 .poster {
     background-image: url("../assets/images/poster.jpg");
-    background-size: contain;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-color: #dddbdb;
@@ -10,16 +10,21 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        min-height: 500px;
+        // min-height: 500px;
+        min-height: calc(var(--index) * 19.86);
         margin-left: 22%;
         width: 100%;
 
         &-title {
             margin-top: 20px;
-            font-size: 98px;
+            // font-size: 98px;
+            font-size: calc(var(--index) * 3.9);
             color: #181e31;
             font-weight: 700;
             line-height: 1;
+            @media (max-width: 567px) {
+                
+            }
         }
     }
 }

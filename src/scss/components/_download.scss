@@ -1,0 +1,36 @@
+.download {
+    padding-bottom: 100px;
+    text-align: center;
+    .h2 {
+        margin-bottom: 40px;
+    }
+
+    &__slider {}
+}
+
+.downloadSwiper {
+    &__item {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        max-width: 240px;
+        margin: 0 auto;
+
+        &-img {}
+
+        &-descr {
+            position: absolute;
+            right: 5px;
+            top: 54%;
+            transform: translateY(-50%);
+
+            span {
+                display: block;
+                font-weight: 700;
+                color: #fff !important;
+                background-color: #6f6f6f;
+                padding: 10px 15px;
+            }
+        }
+    }
+}

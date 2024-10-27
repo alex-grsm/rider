@@ -6,6 +6,12 @@
     width: 100%;
     z-index: 99;
     background-color: #8b0000;
+    // background: linear-gradient(to top, #000000 0%, #ff0000 100%);
+
+    @media (max-width: 991px) {
+        background: #fff;
+    }
+
     &--active {
         display: block;
     }
@@ -14,6 +20,9 @@
         position: relative;
         padding-bottom: 130px;
         padding-top: 30px;
+        @media (max-width: 991px) {
+            padding-bottom: 100px;
+        }
     }
 
     .close-contact {
@@ -30,7 +39,13 @@
         cursor: pointer;
         opacity: 0.7;
         transition: all 0.3s ease;
-        &:hover{
+
+        @media (max-width: 991px) {
+            transform: scale(0.63);
+            right: -10px;
+        }
+
+        &:hover {
             opacity: 1;
         }
     }
@@ -39,6 +54,9 @@
 .contact-form {
     padding: 20px;
     color: white;
+    @media (max-width: 991px) {
+        padding: 0;
+    }
 
     &__inner {
         display: flex;
@@ -47,6 +65,12 @@
         padding-right: 120px;
         gap: 13%;
         align-items: center;
+
+        @media (max-width: 991px) {
+            flex-direction: column;
+            gap: 0;
+            padding-right: 0;
+        }
     }
 
     .contact-form__side {
@@ -54,6 +78,7 @@
         flex-direction: column;
         flex: 1; // Обе колонки будут равными по ширине
         gap: 15px;
+        width: 100%;
     }
 
     .form-group {
@@ -64,13 +89,16 @@
             margin-bottom: 5px;
             font-size: 16px;
             color: #f0f0f0;
+            @media (max-width: 991px) {
+                color: #000;
+            }
         }
 
         .input {
             padding: 10px;
             font-size: 16px;
             border: 1px solid #ccc;
-            border-radius: 8px;
+            border-radius: 13px;
             background-color: white;
             color: black;
         }
@@ -78,6 +106,9 @@
         textarea.input-reset {
             min-height: 272px;
             resize: none;
+            @media (max-width: 991px) {
+                min-height: 110px;
+            }
         }
     }
 
@@ -91,6 +122,9 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        @media (max-width: 991px) {
+            height: 60px;
+        }
 
         .btn {
             align-self: center;

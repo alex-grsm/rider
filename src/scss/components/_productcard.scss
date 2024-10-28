@@ -151,16 +151,16 @@
                     margin: 0;
                 }
 
-                &:after {
-                    content: "";
-                    position: absolute;
-                    z-index: 1;
-                    top: 17px;
-                    left: 0;
-                    width: 100%;
-                    height: calc(100% - 14cqh);
-                    clip-path: polygon(0% 0%, 0% 100%, 44% 100%, 44% 49%, 56% 49%, 56% 67%, 0% 67%, 0% 100%, 100% 100%, 100% 0%);
-                }
+                // &:after {
+                //     content: "";
+                //     position: absolute;
+                //     z-index: 1;
+                //     top: 17px;
+                //     left: 0;
+                //     width: 100%;
+                //     height: calc(100% - 14cqh);
+                //     clip-path: polygon(0% 0%, 0% 100%, 44% 100%, 44% 49%, 56% 49%, 56% 67%, 0% 67%, 0% 100%, 100% 100%, 100% 0%);
+                // }
             }
         }
     }

@@ -4,19 +4,19 @@ const path = require('path');
 // Создание директорий, если их нет, с поддержкой вложенных папок
 const createDirIfNotExist = (dir) => {
     if (!fs.existsSync(dir)) {
-        fs.mkdirSync(dir, { recursive: true }); // Параметр recursive создаёт вложенные папки
+        fs.mkdirSync(dir, { recursive: true });
     }
 }
 
 // Функция для удаления хэша из имени файла
 const removeHashFromFileName = (fileName) => {
-    return fileName.replace(/\.[a-f0-9]{8,}\./, '.'); // Убираем хэш
+    return fileName.replace(/\.[a-f0-9]{8,}\./, '.');
 }
 
 // Перемещение файла с изменением имени
 const moveFile = (file, destination) => {
     const fileName = path.basename(file);
-    const newFileName = removeHashFromFileName(fileName); // Удаляем хэш из имени файла
+    const newFileName = removeHashFromFileName(fileName);
     const destPath = path.join(destination, newFileName);
 
     fs.rename(file, destPath, (err) => {
@@ -24,7 +24,7 @@ const moveFile = (file, destination) => {
         console.log(`Файл ${file} перемещен в ${destPath}`);
     });
 
-    return newFileName; // Возвращаем новое имя файла без хэша
+    return newFileName;
 }
 
 // Функция для поиска файлов с определённым расширением
@@ -84,40 +84,45 @@ const updateCssPaths = () => {
     console.log('Пути в CSS обновлены.');
 }
 
-// Функция для обновления путей в index.html
+// Функция для обновления путей в HTML файлах
 const updateHtmlPaths = () => {
-    const htmlFilePath = './dist/index.html';
-    let htmlContent = fs.readFileSync(htmlFilePath, 'utf8');
+    // Ищем все HTML файлы в папке dist
+    const htmlFiles = findFilesByExtensions('./dist', ['.html']);
+    
+    htmlFiles.forEach((htmlFile) => {
+        const htmlFilePath = `./dist/${htmlFile}`;
+        let htmlContent = fs.readFileSync(htmlFilePath, 'utf8');
 
-    // Обновляем пути для CSS и JS файлов
-    if (movedCssFile) {
-        htmlContent = htmlContent.replace(/href="\/index.*\.css"/, `href="/css/${movedCssFile}"`);
-    }
-    if (movedJsFile) {
-        htmlContent = htmlContent.replace(/src="\/index.*\.js"/, `src="/js/${movedJsFile}"`);
-    }
+        // Обновляем пути для CSS и JS файлов
+        if (movedCssFile) {
+            htmlContent = htmlContent.replace(/href="\/index.*\.css"/, `href="/css/${movedCssFile}"`);
+        }
+        if (movedJsFile) {
+            htmlContent = htmlContent.replace(/src="\/index.*\.js"/, `src="/js/${movedJsFile}"`);
+        }
 
-    // Обновляем пути для шрифтов в HTML (на случай, если они указаны в HTML)
-    fontFiles.forEach(fontFile => {
-        const cleanFontFile = removeHashFromFileName(fontFile);
-        htmlContent = htmlContent.replace(new RegExp(fontFile, 'g'), `assets/fonts/${cleanFontFile}`);
+        // Обновляем пути для шрифтов в HTML
+        fontFiles.forEach(fontFile => {
+            const cleanFontFile = removeHashFromFileName(fontFile);
+            htmlContent = htmlContent.replace(new RegExp(fontFile, 'g'), `assets/fonts/${cleanFontFile}`);
+        });
+
+        // Обновляем пути для изображений
+        imageFiles.forEach(imageFile => {
+            const cleanImageFile = removeHashFromFileName(imageFile);
+            htmlContent = htmlContent.replace(new RegExp(imageFile, 'g'), `assets/images/${cleanImageFile}`);
+        });
+
+        // Сохраняем обновлённый HTML файл
+        fs.writeFileSync(htmlFilePath, htmlContent, 'utf8');
+        console.log(`Пути в ${htmlFile} обновлены.`);
     });
-
-    // Обновляем пути для изображений
-    imageFiles.forEach(imageFile => {
-        const cleanImageFile = removeHashFromFileName(imageFile);
-        htmlContent = htmlContent.replace(new RegExp(imageFile, 'g'), `assets/images/${cleanImageFile}`);
-    });
-
-    // Сохраняем обновлённый файл
-    fs.writeFileSync(htmlFilePath, htmlContent, 'utf8');
-    console.log('Пути в index.html обновлены.');
 }
 
 // Удаление всех файлов с хешами
 const deleteHashedFiles = (dir) => {
     const files = fs.readdirSync(dir);
-    const hashedFiles = files.filter(file => /\.[a-f0-9]{8,}\./.test(file)); // Ищем файлы с хешами
+    const hashedFiles = files.filter(file => /\.[a-f0-9]{8,}\./.test(file));
 
     hashedFiles.forEach(file => {
         fs.unlink(path.join(dir, file), (err) => {
@@ -127,7 +132,7 @@ const deleteHashedFiles = (dir) => {
     });
 }
 
-// Обновляем пути в CSS и HTML
+// Обновляем пути в CSS и HTML файлах
 updateCssPaths();
 updateHtmlPaths();
 

@@ -1,6 +1,7 @@
 // import $ from 'jquery';
 import Swiper from '/node_modules/swiper/swiper-bundle.min.mjs';
 import SimpleLightbox from "simplelightbox";
+// import SimpleLightbox from "/node_modules/simplelightbox/dist/simple-lightbox.min.js";
 
 const productSwiper = () => {
     const productSwiperThumbs = new Swiper('#productSwiperThumbs', {
@@ -23,7 +24,7 @@ const productSwiper = () => {
         },
     });
 
-    let swiperMainGallery = new SimpleLightbox('.swiperMainGallery a', {
+    let swiperMainGallery = new SimpleLightbox('#productSwiperMain a', {
         history: false,
     });
 
@@ -49,11 +50,14 @@ const productSwiper = () => {
     });
 
     productSwiperMainVideo.on('slideChange', function () {
-        const iframes = document.querySelectorAll('#productSwiperMainVideo .swiper-slide iframe');
-
-        iframes.forEach((iframe) => {
-            iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
-        });
+        const previousSlide = productSwiperMainVideo.slides[productSwiperMainVideo.previousIndex];
+        const iframe = previousSlide.querySelector('iframe');
+    
+        if (iframe) {
+            const temp = iframe.src;
+            iframe.src = '';      // Сбрасываем `src`, чтобы остановить видео
+            iframe.src = temp;     // Восстанавливаем `src`, чтобы iframe оставался на месте
+        }
     });
 };
 

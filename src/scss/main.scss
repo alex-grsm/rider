@@ -1,6 +1,7 @@
 @use 'vendor/normalize';
 @use "./node_modules/animate.css/animate.min";
 @use "./node_modules/swiper/swiper-bundle.min";
+@use "./node_modules/simplelightbox/dist/simple-lightbox.min";
 
 @use 'vars';
 @use "fonts";
@@ -11,8 +12,9 @@
 @use "components/mobmenu";
 @use "components/burger";
 @use "components/hero";
-@use "components/productcategory";
 @use "components/breadcrumbs";
+@use "components/productcategory";
+@use "components/productcard";
 @use "components/poster";
 @use "components/about";
 @use "components/download";

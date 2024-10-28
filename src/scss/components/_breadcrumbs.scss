@@ -1,7 +1,7 @@
 .breadcrumbs {
     display: inline-flex;
     align-items: center;
-    background-color: #fff;
+    // background-color: #fff;
     padding: 20px 0;
     border-radius: 13px;
 
@@ -29,6 +29,10 @@
             color: #000;
             font-size: 16px;
             line-height: 1;
+            transition: all 0.3s ease;
+            &:hover, &.active {
+                color: var(--red);
+            }
         }
     }
 

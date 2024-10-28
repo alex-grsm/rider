@@ -7,6 +7,7 @@ import getHeaderHeight from './functions/header-height';
 import './functions/burger';
 import langDropDown from './components/langdropdown';
 import submenuMenu from './components/submenuMenu';
+import productSwiper from './components/productSwiper';
 import heroSwiper from './components/heroSwiper';
 import downloadSwiper from './components/downloadSwiper';
 import modalContact from './components/modalContact';
@@ -20,6 +21,7 @@ window.addEventListener('DOMContentLoaded', () => {
     getHeaderHeight();
     langDropDown();
     submenuMenu();
+    productSwiper();
     heroSwiper();
     downloadSwiper();
     modalContact();

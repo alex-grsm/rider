@@ -7,12 +7,20 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        @media (max-width: 767px) {
+            flex-direction: column;
+        }
     }
 
     &__box {
         display: flex;
         align-items: center;
         gap: 50px;
+        @media (max-width: 767px) {
+            flex-direction: column;
+            margin-bottom: 20px;
+            gap: 20px;
+        }
     }
 
     &__logos {

@@ -37,7 +37,7 @@ a {
 
 .site-container {
     overflow: hidden; // если используете на сайте position: sticky - уберите эту настройку
-    // @include footerToBottom;
+    @include footerToBottom;
 }
 
 .is-hidden {
@@ -126,6 +126,10 @@ h2,
     @media (max-width:767px) {
         font-size: 32px;
     }
+}
+
+.sl-wrapper {
+    background-color: rgba(#000, 0.4);
 }
 
 .swiper-button-next,

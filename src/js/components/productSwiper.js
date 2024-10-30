@@ -1,7 +1,7 @@
 // import $ from 'jquery';
 import Swiper from '/node_modules/swiper/swiper-bundle.min.mjs';
-import SimpleLightbox from "simplelightbox";
-// import SimpleLightbox from "/node_modules/simplelightbox/dist/simple-lightbox.min.js";
+// import SimpleLightbox from "simplelightbox";
+import SimpleLightbox from "/node_modules/simplelightbox/dist/simple-lightbox.modules";
 
 const productSwiper = () => {
     const productSwiperThumbs = new Swiper('#productSwiperThumbs', {

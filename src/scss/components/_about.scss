@@ -8,20 +8,23 @@
 
         .a-logo {
             margin: 15px 0;
+
             img {
-              max-height: 50px;  
+                max-height: 50px;
             }
         }
 
         p {
             font-size: 22px;
             font-size: 22px;
+
             @media (max-width:767px) {
                 font-size: 16px;
             }
 
             &:first-of-type {
                 font-size: 29px;
+
                 @media (max-width:767px) {
                     font-size: 18px;
                 }
@@ -32,6 +35,7 @@
 
 .sales-points {
     padding-bottom: 80px;
+
     @media (max-width:767px) {
         padding-bottom: 60;
     }
@@ -42,9 +46,11 @@
         align-items: center;
         justify-content: space-between;
         position: relative;
+
         @media (max-width:767px) {
             display: block;
         }
+
         &--open {
             .sales-points__content {
                 max-width: 100%;
@@ -54,6 +60,7 @@
 
     &__logo {
         width: 211px;
+
         @media (max-width:767px) {
             display: none;
         }
@@ -78,10 +85,12 @@
         .points-icon {
             width: 20px;
             height: 20px;
-            transform: rotate(180deg);
+            // transform: rotate(180deg);
+
             @media (max-width:767px) {
                 transform: unset;
             }
+
             path {
                 fill: var(--red);
             }
@@ -91,15 +100,18 @@
     &__content {
         display: none;
         position: absolute;
+        z-index: 15;
         width: 100%;
         right: 0;
-        bottom: 80px;
+        // bottom: 80px;
+        top: 80px;
         background-color: #fff;
         border: 2px solid var(--red);
         border-radius: 13px;
         padding: 20px;
         gap: 30px;
         max-width: 979px;
+
         @media (max-width:767px) {
             position: unset;
             margin-top: 20px;
@@ -114,6 +126,7 @@
         &-result {
             width: 240px;
             display: none;
+
             @media (max-width:767px) {
                 width: 220px;
             }
@@ -128,6 +141,7 @@
                 flex-direction: column;
                 gap: 30px;
                 display: none;
+
                 @media (max-width:767px) {
                     gap: 20px;
                 }
@@ -143,6 +157,7 @@
                 display: flex;
                 flex-direction: column;
                 gap: 5px;
+
                 @media (max-width:767px) {
                     font-size: 16px;
                 }
@@ -169,6 +184,7 @@
                 color: #000;
                 cursor: pointer;
                 transition: all 0.3s ease;
+
                 @media (max-width:767px) {
                     font-size: 16px;
                 }
